@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <script src="ext-4.1.1a/ext-all.js"></script>
+    <script>
+        Ext.define('My.sample.Person', {
+            name: 'Unknown',
+
+            constructor: function(name) {
+                if (name) {
+                    this.name = name;
+                }
+            },
+
+            eat: function(foodType) {
+                alert(this.name + " is eating: " + foodType);
+            }
+        });
+
+        var aaron = Ext.create('My.sample.Person', {name:'bob',age:23} , function(){
+            console.log(this);
+            console.log('xxxxxxxxx');
+        });
+
+        aaron.eat("Salad"); // alert("Aaron is eating: Salad");
+
+        Ext.define('Mob', {},function(){console.log('mob ready')});
+
+        var babuin = Ext.create('Mob');
+
+    </script>
+</head>
+<body>
+
+
+</body>
+</html>
